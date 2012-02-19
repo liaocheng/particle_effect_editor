@@ -1,0 +1,206 @@
+<root>
+  <effect>
+    <system position="0,0,0" eulers="0,0,0" loop="0" during="1"/>
+    <generater>
+      <shape>
+        <editor clazz="particleEditor.effect.generater.shape::PlaneEditor" varName="plane" width="20" height="20"/>
+      </shape>
+      <material>
+        <editor clazz="particleEditor.effect.generater.material::BitmapMaterialEditor" varName="bitmap" bothSides="0" requiresBlending="1" blendMode="2" smooth="1" minmap="0" repeat="0" alphaThreshold="0">
+          <bitmap>iVBORw0KGgoAAAANSUhEUgAAACAAAAAQCAYAAAB3AH1ZAAABs0lEQVRIicWVa2/aQBBFz9hL7QCB
+/v//mKjBgIONmX7InTBYKE36UC1dyYL13LPz2IX//NhnF7r7AvgGFKnW9wa4NAFnaTCz8bcB3L0C
+HqQWaKRFAqgSwCUBjMBJegV6oDezyy8B3L0Aa2AFLKUAaZSFgJgDhPkg8146SgegM7Mp/MrMfAU8
+SuukAGmlKEWUIad/0K5fk/E+qXX3zswONwDu/ghsgK0ANjOYlZQzURJAmMfOD9Keaxkje7W7V2bW
+FZkvZRKG2wSzSTA5I62CVUr/mHYdu+0SaJQLrb+4+1jc3bSoSSl+kMkqgW1nQGutq5X+XqY7xauT
+2STAeXO2QRYdHe91qnHRTjPkUhDfBfUC/JBZlCE3a45341XMbHL3KdIi2mioPFYRONJc6ffnlIGj
+/j9p/TiLE7HD6xRNmIM3CraQghh9PMjosz2w560Zj4obE3IC+gJgZkd3z6mB29keuHb2jq9PQSft
+0vuzmU3vY2hmnbvnhol5jub6W+dABzzFMX3vJKx56/p/cRK+mNk++310FxjXcfyTuyCO3/M9n6/c
+hrXMGz6+DWMCzvcun/nzE2g1/X67zWAmAAAAAElFTkSuQmCC</bitmap>
+        </editor>
+      </material>
+      <sample>
+        <editor clazz="SamplesFactory.as$27::SampleEdior" varName="s1" material="0" shape="0"/>
+      </sample>
+      <output>
+        <editor clazz="particleEditor.effect.generater.subGenerate::SingleGeneraterEditor" sample="0" count="1000"/>
+      </output>
+    </generater>
+    <vars>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="start time" start="0" end="10" ease="0"/>
+      <editor clazz="particleEditor.effect.param.vars::ConstNumberVarEditor" varName="during time" number="3"/>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offestX" start="-300" end="300" ease="15"/>
+      <editor clazz="particleEditor.effect.param.vars::RandomGlobeVarEditor" varName="" innerRadius="10" outerRadius="20" center="0,0,0"/>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offestY" start="-50" end="50" ease="11"/>
+      <exception comment="this if for time action">
+        <editor clazz="particleEditor.effect.param::TimeSelection" startTime="0" duringTime="1"/>
+      </exception>
+    </vars>
+    <action>
+      <global>
+        <editor clazz="particleEditor.effect.action.global::BillboardEditor" varName="BillboardGlobal"/>
+        <editor clazz="particleEditor.effect.action.global::ChangeColorByLifeGlobalEditor" varName="ChangeColorByLifeGlobal" start="0.8,0.8,0.2,0.4,0,0,0,0" end="0.2,0.8,0.8,0.1,0,0,0,0"/>
+      </global>
+      <local>
+        <editor clazz="particleEditor.effect.action.local::OffestActionEditor" varName="OffestPositionLocal">
+          <editor clazz="OffestActionEditor.as$53::OffestParam" offest="2,6,-1"/>
+        </editor>
+        <editor clazz="particleEditor.effect.action.local::VelocityLocalEditor" varName="VelocityLocal">
+          <editor clazz="VelocityLocalEditor.as$46::VelocityParam" velocity="3,4,5"/>
+        </editor>
+      </local>
+    </action>
+  </effect>
+  <effect>
+    <system position="0,0,0" eulers="0,0,0" loop="0" during="1"/>
+    <generater>
+      <shape>
+        <editor clazz="particleEditor.effect.generater.shape::PlaneEditor" varName="plane" width="20" height="20"/>
+      </shape>
+      <material>
+        <editor clazz="particleEditor.effect.generater.material::BitmapMaterialEditor" varName="bitmap" bothSides="0" requiresBlending="1" blendMode="2" smooth="1" minmap="0" repeat="0" alphaThreshold="0">
+          <bitmap>iVBORw0KGgoAAAANSUhEUgAAACAAAAAQCAYAAAB3AH1ZAAABs0lEQVRIicWVa2/aQBBFz9hL7QCB
+/v//mKjBgIONmX7InTBYKE36UC1dyYL13LPz2IX//NhnF7r7AvgGFKnW9wa4NAFnaTCz8bcB3L0C
+HqQWaKRFAqgSwCUBjMBJegV6oDezyy8B3L0Aa2AFLKUAaZSFgJgDhPkg8146SgegM7Mp/MrMfAU8
+SuukAGmlKEWUIad/0K5fk/E+qXX3zswONwDu/ghsgK0ANjOYlZQzURJAmMfOD9Keaxkje7W7V2bW
+FZkvZRKG2wSzSTA5I62CVUr/mHYdu+0SaJQLrb+4+1jc3bSoSSl+kMkqgW1nQGutq5X+XqY7xauT
+2STAeXO2QRYdHe91qnHRTjPkUhDfBfUC/JBZlCE3a45341XMbHL3KdIi2mioPFYRONJc6ffnlIGj
+/j9p/TiLE7HD6xRNmIM3CraQghh9PMjosz2w560Zj4obE3IC+gJgZkd3z6mB29keuHb2jq9PQSft
+0vuzmU3vY2hmnbvnhol5jub6W+dABzzFMX3vJKx56/p/cRK+mNk++310FxjXcfyTuyCO3/M9n6/c
+hrXMGz6+DWMCzvcun/nzE2g1/X67zWAmAAAAAElFTkSuQmCC</bitmap>
+        </editor>
+      </material>
+      <sample>
+        <editor clazz="SamplesFactory.as$27::SampleEdior" varName="s1" material="0" shape="0"/>
+      </sample>
+      <output>
+        <editor clazz="particleEditor.effect.generater.subGenerate::SingleGeneraterEditor" sample="0" count="1000"/>
+      </output>
+    </generater>
+    <vars>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="start time" start="0" end="10" ease="0"/>
+      <editor clazz="particleEditor.effect.param.vars::ConstNumberVarEditor" varName="during time" number="3"/>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offestX" start="300" end="-300" ease="15"/>
+      <editor clazz="particleEditor.effect.param.vars::RandomGlobeVarEditor" varName="" innerRadius="10" outerRadius="20" center="0,0,0"/>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offestY" start="50" end="-50" ease="11"/>
+      <exception comment="this if for time action">
+        <editor clazz="particleEditor.effect.param::TimeSelection" startTime="0" duringTime="1"/>
+      </exception>
+    </vars>
+    <action>
+      <global>
+        <editor clazz="particleEditor.effect.action.global::BillboardEditor" varName="BillboardGlobal"/>
+        <editor clazz="particleEditor.effect.action.global::ChangeColorByLifeGlobalEditor" varName="ChangeColorByLifeGlobal" start="0.8,0.2,0.8,0.4,0,0,0,0" end="0.8,0.2,0.2,0.1,0,0,0,0"/>
+      </global>
+      <local>
+        <editor clazz="particleEditor.effect.action.local::OffestActionEditor" varName="OffestPositionLocal">
+          <editor clazz="OffestActionEditor.as$53::OffestParam" offest="2,6,-1"/>
+        </editor>
+        <editor clazz="particleEditor.effect.action.local::VelocityLocalEditor" varName="VelocityLocal">
+          <editor clazz="VelocityLocalEditor.as$46::VelocityParam" velocity="3,4,5"/>
+        </editor>
+      </local>
+    </action>
+  </effect>
+  <effect>
+    <system position="0,0,0" eulers="0,0,0" loop="0" during="1"/>
+    <generater>
+      <shape>
+        <editor clazz="particleEditor.effect.generater.shape::PlaneEditor" varName="plane" width="20" height="20"/>
+      </shape>
+      <material>
+        <editor clazz="particleEditor.effect.generater.material::BitmapMaterialEditor" varName="bitmap" bothSides="0" requiresBlending="1" blendMode="2" smooth="1" minmap="0" repeat="0" alphaThreshold="0">
+          <bitmap>iVBORw0KGgoAAAANSUhEUgAAACAAAAAQCAYAAAB3AH1ZAAABs0lEQVRIicWVa2/aQBBFz9hL7QCB
+/v//mKjBgIONmX7InTBYKE36UC1dyYL13LPz2IX//NhnF7r7AvgGFKnW9wa4NAFnaTCz8bcB3L0C
+HqQWaKRFAqgSwCUBjMBJegV6oDezyy8B3L0Aa2AFLKUAaZSFgJgDhPkg8146SgegM7Mp/MrMfAU8
+SuukAGmlKEWUIad/0K5fk/E+qXX3zswONwDu/ghsgK0ANjOYlZQzURJAmMfOD9Keaxkje7W7V2bW
+FZkvZRKG2wSzSTA5I62CVUr/mHYdu+0SaJQLrb+4+1jc3bSoSSl+kMkqgW1nQGutq5X+XqY7xauT
+2STAeXO2QRYdHe91qnHRTjPkUhDfBfUC/JBZlCE3a45341XMbHL3KdIi2mioPFYRONJc6ffnlIGj
+/j9p/TiLE7HD6xRNmIM3CraQghh9PMjosz2w560Zj4obE3IC+gJgZkd3z6mB29keuHb2jq9PQSft
+0vuzmU3vY2hmnbvnhol5jub6W+dABzzFMX3vJKx56/p/cRK+mNk++310FxjXcfyTuyCO3/M9n6/c
+hrXMGz6+DWMCzvcun/nzE2g1/X67zWAmAAAAAElFTkSuQmCC</bitmap>
+        </editor>
+      </material>
+      <sample>
+        <editor clazz="SamplesFactory.as$27::SampleEdior" varName="s1" material="0" shape="0"/>
+      </sample>
+      <output>
+        <editor clazz="particleEditor.effect.generater.subGenerate::SingleGeneraterEditor" sample="0" count="1000"/>
+      </output>
+    </generater>
+    <vars>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="start time" start="0" end="10" ease="0"/>
+      <editor clazz="particleEditor.effect.param.vars::ConstNumberVarEditor" varName="during time" number="3"/>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offestY" start="-300" end="300" ease="15"/>
+      <editor clazz="particleEditor.effect.param.vars::RandomGlobeVarEditor" varName="" innerRadius="10" outerRadius="20" center="0,0,0"/>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offestX" start="-50" end="50" ease="11"/>
+      <exception comment="this if for time action">
+        <editor clazz="particleEditor.effect.param::TimeSelection" startTime="0" duringTime="1"/>
+      </exception>
+    </vars>
+    <action>
+      <global>
+        <editor clazz="particleEditor.effect.action.global::BillboardEditor" varName="BillboardGlobal"/>
+        <editor clazz="particleEditor.effect.action.global::ChangeColorByLifeGlobalEditor" varName="ChangeColorByLifeGlobal" start="0.2,0.2,0.8,0.4,0,0,0,0" end="0.8,0.2,0.2,0.1,0,0,0,0"/>
+      </global>
+      <local>
+        <editor clazz="particleEditor.effect.action.local::OffestActionEditor" varName="OffestPositionLocal">
+          <editor clazz="OffestActionEditor.as$53::OffestParam" offest="6,2,-1"/>
+        </editor>
+        <editor clazz="particleEditor.effect.action.local::VelocityLocalEditor" varName="VelocityLocal">
+          <editor clazz="VelocityLocalEditor.as$46::VelocityParam" velocity="3,4,5"/>
+        </editor>
+      </local>
+    </action>
+  </effect>
+  <effect>
+    <system position="0,0,0" eulers="0,0,0" loop="0" during="1"/>
+    <generater>
+      <shape>
+        <editor clazz="particleEditor.effect.generater.shape::PlaneEditor" varName="plane" width="20" height="20"/>
+      </shape>
+      <material>
+        <editor clazz="particleEditor.effect.generater.material::BitmapMaterialEditor" varName="bitmap" bothSides="0" requiresBlending="1" blendMode="2" smooth="1" minmap="0" repeat="0" alphaThreshold="0">
+          <bitmap>iVBORw0KGgoAAAANSUhEUgAAACAAAAAQCAYAAAB3AH1ZAAABs0lEQVRIicWVa2/aQBBFz9hL7QCB
+/v//mKjBgIONmX7InTBYKE36UC1dyYL13LPz2IX//NhnF7r7AvgGFKnW9wa4NAFnaTCz8bcB3L0C
+HqQWaKRFAqgSwCUBjMBJegV6oDezyy8B3L0Aa2AFLKUAaZSFgJgDhPkg8146SgegM7Mp/MrMfAU8
+SuukAGmlKEWUIad/0K5fk/E+qXX3zswONwDu/ghsgK0ANjOYlZQzURJAmMfOD9Keaxkje7W7V2bW
+FZkvZRKG2wSzSTA5I62CVUr/mHYdu+0SaJQLrb+4+1jc3bSoSSl+kMkqgW1nQGutq5X+XqY7xauT
+2STAeXO2QRYdHe91qnHRTjPkUhDfBfUC/JBZlCE3a45341XMbHL3KdIi2mioPFYRONJc6ffnlIGj
+/j9p/TiLE7HD6xRNmIM3CraQghh9PMjosz2w560Zj4obE3IC+gJgZkd3z6mB29keuHb2jq9PQSft
+0vuzmU3vY2hmnbvnhol5jub6W+dABzzFMX3vJKx56/p/cRK+mNk++310FxjXcfyTuyCO3/M9n6/c
+hrXMGz6+DWMCzvcun/nzE2g1/X67zWAmAAAAAElFTkSuQmCC</bitmap>
+        </editor>
+      </material>
+      <sample>
+        <editor clazz="SamplesFactory.as$27::SampleEdior" varName="s1" material="0" shape="0"/>
+      </sample>
+      <output>
+        <editor clazz="particleEditor.effect.generater.subGenerate::SingleGeneraterEditor" sample="0" count="1000"/>
+      </output>
+    </generater>
+    <vars>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="start time" start="0" end="10" ease="0"/>
+      <editor clazz="particleEditor.effect.param.vars::ConstNumberVarEditor" varName="during time" number="3"/>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offestY" start="300" end="-300" ease="15"/>
+      <editor clazz="particleEditor.effect.param.vars::RandomGlobeVarEditor" varName="" innerRadius="10" outerRadius="20" center="0,0,0"/>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offestX" start="50" end="-50" ease="11"/>
+      <exception comment="this if for time action">
+        <editor clazz="particleEditor.effect.param::TimeSelection" startTime="0" duringTime="1"/>
+      </exception>
+    </vars>
+    <action>
+      <global>
+        <editor clazz="particleEditor.effect.action.global::BillboardEditor" varName="BillboardGlobal"/>
+        <editor clazz="particleEditor.effect.action.global::ChangeColorByLifeGlobalEditor" varName="ChangeColorByLifeGlobal" start="0.8,0,0.2,0.4,0,0,0,0" end="0.8,0.2,0.1,0.1,0,0,0,0"/>
+      </global>
+      <local>
+        <editor clazz="particleEditor.effect.action.local::OffestActionEditor" varName="OffestPositionLocal">
+          <editor clazz="OffestActionEditor.as$53::OffestParam" offest="6,2,-1"/>
+        </editor>
+        <editor clazz="particleEditor.effect.action.local::VelocityLocalEditor" varName="VelocityLocal">
+          <editor clazz="VelocityLocalEditor.as$46::VelocityParam" velocity="3,4,5"/>
+        </editor>
+      </local>
+    </action>
+  </effect>
+</root>

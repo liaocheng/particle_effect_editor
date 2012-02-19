@@ -1,0 +1,39 @@
+<root>
+  <effect>
+    <system position="0,0,0" eulers="0,0,0" loop="1" during="1"/>
+    <generater>
+      <shape>
+        <editor clazz="particleEditor.effect.generater.shape::SphereEditor" varName="" radius="10" segmentsW="6" segmentsH="6"/>
+      </shape>
+      <material>
+        <editor clazz="particleEditor.effect.generater.material::ColorMaterialEditor" varName="" bothSides="0" requiresBlending="1" blendMode="2" color="97ff3300"/>
+      </material>
+      <sample>
+        <editor clazz="particleEditor.effect.SamplePane.as$549::SampleEdior" varName="" material="0" shape="0"/>
+      </sample>
+      <output>
+        <editor clazz="particleEditor.effect.generater.subGenerate::SingleGeneraterEditor" sample="0" count="500"/>
+      </output>
+    </generater>
+    <vars>
+      <editor clazz="particleEditor.effect.param.vars::RandomNumberVarEditor" varName="time" min="1" max="5"/>
+      <editor clazz="particleEditor.effect.param.vars::RandomGlobeVarEditor" varName="globe" innerRadius="0" outerRadius="20" center="0,0,0"/>
+      <editor clazz="particleEditor.effect.param.vars::RandomNumberVarEditor" varName="duringtime" min="1" max="5"/>
+      <exception comment="this if for time action">
+        <editor clazz="particleEditor.effect.param::TimeSelection" startTime="0" duringTime="4"/>
+      </exception>
+    </vars>
+    <action>
+      <global>
+        <editor clazz="particleEditor.effect.action.global::ScaleByLifeGlobalEditor" varName="ScaleByLifeGlobal" start="2.5" end="0.1"/>
+        <editor clazz="particleEditor.effect.action.global::VelocityGlobalEditor" varName="VelocityGlobal" velocity="0,80,0"/>
+        <editor clazz="particleEditor.effect.action.global::ChangeColorByLifeGlobalEditor" varName="ChangeColorByLifeGlobal" start="1,1,1,1,0,0,0,0" end="0.67,0,0,0.03,0,0,0,0"/>
+      </global>
+      <local>
+        <editor clazz="particleEditor.effect.action.local::VelocityLocalEditor" varName="VelocityLocal">
+          <editor clazz="particleEditor.effect.VelocityLocalEditor.as$586::VelocityParam" velocity="1,2,3"/>
+        </editor>
+      </local>
+    </action>
+  </effect>
+</root>

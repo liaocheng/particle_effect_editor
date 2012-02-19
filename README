@@ -1,0 +1,6 @@
+This is a simple gui editor for the particle system!
+how to use :
+step 1: open the editor,click import button.
+step 2: open any file of example,copy body of the file to the code window of the editor.
+step 3: click preview.
+step 4: change any propertys of the example and then preview again.
