@@ -1,6 +1,6 @@
 package particleEditor.effect.generater.shape
 {
-	import away3d.primitives.Cube;
+	import away3d.primitives.CubeGeometry;
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	
 	/**
@@ -28,8 +28,8 @@ package particleEditor.effect.generater.shape
 		
 		override public function createNeedStuff():*
 		{
-			var cube:Cube = new Cube(null, widthInput, heightInput, depthInput);
-			return cube.geometry.subGeometries[0];
+			var cube:CubeGeometry = new CubeGeometry(widthInput, heightInput, depthInput);
+			return cube.subGeometries[0];
 		}	
 	}
 

@@ -1,6 +1,6 @@
 package particleEditor.effect.generater.shape
 {
-	import away3d.primitives.Sphere;
+	import away3d.primitives.SphereGeometry;
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	
 	/**
@@ -31,8 +31,8 @@ package particleEditor.effect.generater.shape
 		
 		override public function createNeedStuff():*
 		{
-			var sphere:Sphere = new Sphere(null, radiusInput, segmentsWInput, segmentsHInput);
-			return sphere.geometry.subGeometries[0];
+			var sphere:SphereGeometry = new SphereGeometry(radiusInput, segmentsWInput, segmentsHInput);
+			return sphere.subGeometries[0];
 		}
 	
 	}
