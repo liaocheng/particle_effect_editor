@@ -22,8 +22,8 @@ package particleEditor.effect.action.global
 			super();
 			nameInput.getInput().setText("FlickerGlobal");
 			
-			minInput = new ColorTransformInput("start transform:");
-			maxInput = new ColorTransformInput("end  transform:");
+			minInput = new ColorTransformInput("min transform:");
+			maxInput = new ColorTransformInput("max transform:");
 			cycleInput = new NumberInput("     cycle     :", "10", 2, 3);
 			cycleInput.setMinMax(0);
 			phaseAngleInput = new NumberInput("phase angle:", "0", 2, 3);
