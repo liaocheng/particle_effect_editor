@@ -14,7 +14,8 @@ package particleEditor.effect.action
 		private static const globalAction:Array = [ new EditorDefinition("velocity",VelocityGlobalEditorS) , new EditorDefinition("accelerate",AccelerateGlobalEditorS) , new EditorDefinition("billboard",BillboardEditorS) ,
 													new EditorDefinition("scale by life",ScaleByLifeGlobalEditorS), new EditorDefinition("scale by time",ScaleByTimeGlobalEditorS), new EditorDefinition("bezier",BezierGlobalEditorS),
 													new EditorDefinition("broken line", BrokenLineGlobalEditorS), new EditorDefinition("color by life", ChangeColorByLifeGlobalEditorS), new EditorDefinition("flicker", FlickerGlobalEditorS),
-													new EditorDefinition("rotate by speed",AutoRotateGlobalEditorS)];		
+													new EditorDefinition("rotate by speed", AutoRotateGlobalEditorS), new EditorDefinition("UV linear ease", UVLinearEaseGlobalEditorS), new EditorDefinition("UV drift", UVDriftGlobalEditorS)
+													,new EditorDefinition("uv seq pic",UVSeqPicByTimeGlobalEditorS)];
 		private var _actionsModel:Array = new Array();
 		
 		public function GlobalFactoryS()

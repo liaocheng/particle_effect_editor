@@ -12,7 +12,7 @@ package particleEditor.effect.action
 		
 		private static const localAction:Array = [ new EditorDefinition("velocity",VelocityLocalEditorS) , new EditorDefinition("offest", OffestActionEditorS), new EditorDefinition("accelerate",AccelerateLocalEditorS) , 
 													new EditorDefinition("circle",CircleLocalEditorS) , new EditorDefinition("drift",DriftLocalEditorS), new EditorDefinition("scale",RandomScaleLocalEditorS) ,
-													new EditorDefinition("bezier",BezierLocalEditorS), new EditorDefinition("rotation",RotateLocalEditorS),new EditorDefinition("sequenece",SequenceBitmapLocalEditorS)];
+													new EditorDefinition("bezier",BezierLocalEditorS), new EditorDefinition("rotation",RotateLocalEditorS)];
 		
 		
 		private var _actionsModel:Array = new Array();

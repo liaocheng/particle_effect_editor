@@ -26,7 +26,8 @@ package particleEditor.effect.action
 		private static const globalAction:Array = [ new EditorDefinition("velocity",VelocityGlobalEditor) , new EditorDefinition("accelerate",AccelerateGlobalEditor) , new EditorDefinition("billboard",BillboardEditor) ,
 													new EditorDefinition("scale by life",ScaleByLifeGlobalEditor), new EditorDefinition("scale by time",ScaleByTimeGlobalEditor), new EditorDefinition("bezier",BezierGlobalEditor),
 													new EditorDefinition("broken line", BrokenLineGlobalEditor), new EditorDefinition("color by life", ChangeColorByLifeGlobalEditor), new EditorDefinition("flicker", FlickerGlobalEditor),
-													new EditorDefinition("rotate by speed",AutoRotateGlobalEditor)];
+													new EditorDefinition("rotate by speed", AutoRotateGlobalEditor), new EditorDefinition("UV linear ease", UVLinearEaseGlobalEditor),new EditorDefinition("UV drift",UVDriftGlobalEditor),
+													new EditorDefinition("UV seq pic",UVSeqPicByTimeGlobalEditor)];
 		private var comboBox:JComboBox;
 		
 		private var content:JPanel;

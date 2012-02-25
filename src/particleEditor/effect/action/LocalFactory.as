@@ -24,7 +24,7 @@ package particleEditor.effect.action
 		
 		private static const localAction:Array = [ new EditorDefinition("velocity",VelocityLocalEditor) , new EditorDefinition("offest", OffestActionEditor), new EditorDefinition("accelerate",AccelerateLocalEditor) , 
 													new EditorDefinition("circle",CircleLocalEditor) , new EditorDefinition("drift",DriftLocalEditor), new EditorDefinition("scale",RandomScaleLocalEditor) ,
-													new EditorDefinition("bezier", BezierLocalEditor), new EditorDefinition("rotation", RotateLocalEditor), new EditorDefinition("sequenece", SequenceBitmapLocalEditor)];
+													new EditorDefinition("bezier", BezierLocalEditor), new EditorDefinition("rotation", RotateLocalEditor)];
 		private var comboBox:JComboBox;
 		
 		private var content:JPanel;
