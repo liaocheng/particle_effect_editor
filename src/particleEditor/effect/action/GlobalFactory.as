@@ -27,7 +27,7 @@ package particleEditor.effect.action
 													new EditorDefinition("scale by life",ScaleByLifeGlobalEditor), new EditorDefinition("scale by time",ScaleByTimeGlobalEditor), new EditorDefinition("bezier",BezierGlobalEditor),
 													new EditorDefinition("broken line", BrokenLineGlobalEditor), new EditorDefinition("color by life", ChangeColorByLifeGlobalEditor), new EditorDefinition("flicker", FlickerGlobalEditor),
 													new EditorDefinition("rotate by speed", AutoRotateGlobalEditor), new EditorDefinition("UV linear ease", UVLinearEaseGlobalEditor),new EditorDefinition("UV drift",UVDriftGlobalEditor),
-													new EditorDefinition("UV seqPic by time", UVSeqPicByTimeGlobalEditor), new EditorDefinition("UV seqPic by life", UVSeqPicByLifeGlobalEditor)];
+													new EditorDefinition("UV seq pic by time", UVSeqPicByTimeGlobalEditor), new EditorDefinition("UV seq pic by life", UVSeqPicByLifeGlobalEditor)];
 		private var comboBox:JComboBox;
 		
 		private var content:JPanel;
