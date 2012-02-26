@@ -27,7 +27,7 @@ package particleEditor.effect.action
 													new EditorDefinition("scale by life",ScaleByLifeGlobalEditor), new EditorDefinition("scale by time",ScaleByTimeGlobalEditor), new EditorDefinition("bezier",BezierGlobalEditor),
 													new EditorDefinition("broken line", BrokenLineGlobalEditor), new EditorDefinition("color by life", ChangeColorByLifeGlobalEditor), new EditorDefinition("flicker", FlickerGlobalEditor),
 													new EditorDefinition("rotate by speed", AutoRotateGlobalEditor), new EditorDefinition("UV linear ease", UVLinearEaseGlobalEditor),new EditorDefinition("UV drift",UVDriftGlobalEditor),
-													new EditorDefinition("UV seq pic",UVSeqPicByTimeGlobalEditor)];
+													new EditorDefinition("UV seqPic by time", UVSeqPicByTimeGlobalEditor), new EditorDefinition("UV seqPic by life", UVSeqPicByLifeGlobalEditor)];
 		private var comboBox:JComboBox;
 		
 		private var content:JPanel;
@@ -43,7 +43,7 @@ package particleEditor.effect.action
 			_titleHandler = titleHandler;
 			
 			comboBox = new JComboBox(_comboModel);
-			comboBox.setPreferredWidth(120);
+			comboBox.setPreferredWidth(140);
 			var addButton:JButton = new JButton("add");
 			var pane:JPanel = new JPanel(new SoftBoxLayout(SoftBoxLayout.X_AXIS,5));
 			pane.appendAll(new JLabel("new action"), comboBox, addButton);

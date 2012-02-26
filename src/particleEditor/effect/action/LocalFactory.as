@@ -24,7 +24,7 @@ package particleEditor.effect.action
 		
 		private static const localAction:Array = [ new EditorDefinition("velocity",VelocityLocalEditor) , new EditorDefinition("offest", OffestActionEditor), new EditorDefinition("accelerate",AccelerateLocalEditor) , 
 													new EditorDefinition("circle",CircleLocalEditor) , new EditorDefinition("drift",DriftLocalEditor), new EditorDefinition("scale",RandomScaleLocalEditor) ,
-													new EditorDefinition("bezier", BezierLocalEditor), new EditorDefinition("rotation", RotateLocalEditor)];
+													new EditorDefinition("bezier", BezierLocalEditor), new EditorDefinition("rotation", RotateLocalEditor),new EditorDefinition("UV seq pic",UVSeqPicByTimeLocalEditor)];
 		private var comboBox:JComboBox;
 		
 		private var content:JPanel;
@@ -45,7 +45,7 @@ package particleEditor.effect.action
 			_actionParamPane = actionParamPane;
 			_varListModel = varListModel;
 			comboBox = new JComboBox(_comboModel);
-			comboBox.setPreferredWidth(120);
+			comboBox.setPreferredWidth(140);
 			var addButton:JButton = new JButton("add");
 			var pane:JPanel = new JPanel(new SoftBoxLayout(SoftBoxLayout.X_AXIS,5));
 			pane.appendAll(new JLabel("new action"), comboBox, addButton);

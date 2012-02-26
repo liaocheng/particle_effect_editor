@@ -15,7 +15,7 @@ package particleEditor.effect.action
 													new EditorDefinition("scale by life",ScaleByLifeGlobalEditorS), new EditorDefinition("scale by time",ScaleByTimeGlobalEditorS), new EditorDefinition("bezier",BezierGlobalEditorS),
 													new EditorDefinition("broken line", BrokenLineGlobalEditorS), new EditorDefinition("color by life", ChangeColorByLifeGlobalEditorS), new EditorDefinition("flicker", FlickerGlobalEditorS),
 													new EditorDefinition("rotate by speed", AutoRotateGlobalEditorS), new EditorDefinition("UV linear ease", UVLinearEaseGlobalEditorS), new EditorDefinition("UV drift", UVDriftGlobalEditorS)
-													,new EditorDefinition("uv seq pic",UVSeqPicByTimeGlobalEditorS)];
+													,new EditorDefinition("UV seqPic by time",UVSeqPicByTimeGlobalEditorS), new EditorDefinition("UV seqPic by life", UVSeqPicByLifeGlobalEditorS)];
 		private var _actionsModel:Array = new Array();
 		
 		public function GlobalFactoryS()
