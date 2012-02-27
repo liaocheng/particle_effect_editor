@@ -1,7 +1,6 @@
 package particleEditor.effect.generater.shape
 {
 	import away3d.primitives.PlaneGeometry;
-	import away3d.tools.MeshHelper;
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	
 	/**
