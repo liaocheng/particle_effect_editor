@@ -4,6 +4,7 @@ package {
 	import flash.display.Stage;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.events.TransformGestureEvent;
 	import flash.geom.Vector3D;
 
 	/**
@@ -43,6 +44,15 @@ package {
 			view.stage.addEventListener(MouseEvent.MOUSE_UP, onMouseUp);
             view.addEventListener(MouseEvent.MOUSE_WHEEL, onMouseWheel);
 			view.addEventListener(Event.ENTER_FRAME, onEnterFrame);
+			view.addEventListener(TransformGestureEvent.GESTURE_ZOOM, onZoom);
+		}
+		
+		private function onZoom(e:TransformGestureEvent):void
+		{
+			var event:MouseEvent = new MouseEvent(MouseEvent.MOUSE_WHEEL);
+			event.delta = (e.scaleX * e.scaleY > 1)? 2: -2;
+			onMouseWheel(event);
+			_drag = false;
 		}
 
 		/**
