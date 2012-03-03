@@ -42,7 +42,7 @@ package particleEditor
 			append(addButton);
 			_list = new JList(_particleGeneraters,new GeneralListCellFactory(EffectListCell,false,true,30));
 			_list.setVisibleCellWidth(100);
-			_list.setVisibleRowCount(10);
+			_list.setVisibleRowCount(5);
 			append(new JScrollPane(_list));
 			
 			_deleteButton = new JButton("delete");

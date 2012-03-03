@@ -14,7 +14,7 @@ package particleEditor.inputer
 	import org.aswing.JPanel;
 	import mx.utils.Base64Decoder;
 	import mx.utils.Base64Encoder;
-	import particleEditor.utils.FileReader;
+	import particleEditor.utils.FileOperater;
 	/**
 	 * ...
 	 * @author liaocheng
@@ -51,7 +51,7 @@ package particleEditor.inputer
 		
 		private function onOpen(e:Event):void
 		{
-			FileReader.readFile(new FileFilter("select a image", "*.jpg;*.png;*.bmp"), onRead);
+			FileOperater.readFile(new FileFilter("select a image", "*.jpg;*.png;*.bmp"), onRead);
 		}
 		
 		private function onRead(byte:ByteArray):void

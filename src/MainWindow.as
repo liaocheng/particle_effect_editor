@@ -2,6 +2,8 @@ package
 {
 	import flash.display.DisplayObject;
 	import flash.events.Event;
+	import flash.net.FileFilter;
+	import flash.utils.ByteArray;
 	import org.aswing.ASColor;
 	import org.aswing.AssetPane;
 	import org.aswing.AsWingConstants;
@@ -17,6 +19,8 @@ package
 	import particleEditor.effect.EffectFactory;
 	import particleEditor.EffectGroup;
 	import particleEditor.EffectGroupFactory;
+	import particleEditor.utils.FileOperater;
+
 	/**
 	 * ...
 	 * @author liaocheng
@@ -66,12 +70,19 @@ package
 			
 			var _exportButton:JButton = new JButton("export");
 			var _importButton:JButton = new JButton("import");
-			var _pane:JPanel = new JPanel(new FlowLayout(AsWingConstants.CENTER));
+			var _pane:JPanel = new JPanel(new FlowLayout(AsWingConstants.CENTER,10,0));
 			_pane.appendAll(_exportButton, _importButton);
+			_leftPane.append(_pane);
+			var _openButton:JButton = new JButton(" open ");
+			var _saveButton:JButton = new JButton(" save ");
+			_pane = new JPanel(new FlowLayout(AsWingConstants.CENTER,10,0));
+			_pane.appendAll(_saveButton, _openButton);
 			_leftPane.append(_pane);
 			
 			_importButton.addActionListener(importCode);
 			_exportButton.addActionListener(exportCode);
+			_openButton.addActionListener(openFile);
+			_saveButton.addActionListener(saveFile);
 			
 			_effectGroupFactory.setSelectHandler(selectEffect);
 
@@ -83,7 +94,6 @@ package
 			
 			_systemContainer = new JPanel(new FlowLayout(AsWingConstants.CENTER));
 			_leftPane.append(_systemContainer);
-			
 		}
 		
 		private function preview(e:Event):void
@@ -115,6 +125,24 @@ package
 		private function exportCode(e:Event):void
 		{
 			CodeWindow.showExport(_effectGroupFactory.getExportCode());
+		}
+		
+		private function openFile(e:Event):void
+		{ 
+			FileOperater.readFile(new FileFilter("open a valid xml file", "*.*"), onReadFile);
+		}
+		
+		private function onReadFile(byte:ByteArray):void
+		{
+			if (byte)
+			{
+				onImportCode(byte.toString());
+			}
+		}
+		
+		private function saveFile(e:Event):void
+		{ 
+			FileOperater.writeFile(_effectGroupFactory.getExportCode());
 		}
 		
 		private function importCode(e:Event):void

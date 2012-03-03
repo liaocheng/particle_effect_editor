@@ -13,7 +13,8 @@ package particleEditor.inputer
 	import org.aswing.JButton;
 	import org.aswing.JLabel;
 	import org.aswing.JPanel;
-	import particleEditor.utils.FileReader;
+	import particleEditor.utils.FileOperater;
+	
 	/**
 	 * ...
 	 * @author liaocheng
@@ -39,8 +40,8 @@ package particleEditor.inputer
 		}
 		
 		protected function onOpen(E:Event):void
-		{
-			FileReader.readFile(new FileFilter("select a model", "*.3ds"), onRead);
+		{ 
+			FileOperater.readFile(new FileFilter("select a model", "*.3ds"), onRead);
 		}
 		
 		private function onRead(byte:ByteArray):void
