@@ -26,8 +26,6 @@ package
 		
 		private function init(e:Event = null):void 
 		{
-			var k:uint = parseInt(ASColor.RED.getARGB().toString(16),16);
-			trace(k.toString(16));
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			stage.align = StageAlign.TOP_LEFT;
