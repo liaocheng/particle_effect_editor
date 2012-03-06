@@ -54,7 +54,7 @@ package  particleEditor.utils
 		{
 			if (Capabilities.playerType != "Desktop")
 			{
-				JOptionPane.showMessageDialog("Error", "must under air to use this feature");
+				JOptionPane.showMessageDialog("Error", "run air version to use this feature");
 				handler(null);
 			}
 			else
@@ -89,7 +89,7 @@ package  particleEditor.utils
 		{
 			if (Capabilities.playerType != "Desktop")
 			{
-				JOptionPane.showMessageDialog("Error", "must under air to use this feature");
+				JOptionPane.showMessageDialog("Error", "run air version to use this feature");
 			}
 			else
 			{
