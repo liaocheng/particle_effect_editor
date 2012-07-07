@@ -36,12 +36,12 @@ import particleEditor.inputer.VectorComboBoxS;
 
 class DriftParamS extends EditorWithPropertyBaseS
 {
-	private var offestInput:VectorComboBoxS;
+	private var offsetInput:VectorComboBoxS;
 	private var cycleComboBox:ComboBoxInputS;
 	public function DriftParamS(varListModel:Array)
 	{
 		super();
-		offestInput = new VectorComboBoxS(varListModel);
+		offsetInput = new VectorComboBoxS(varListModel);
 		cycleComboBox = new ComboBoxInputS(varListModel);
 	}
 	
@@ -49,7 +49,7 @@ class DriftParamS extends EditorWithPropertyBaseS
 	{
 		return function(param:ParticleParam, localVars:Dictionary):void
 		{
-			var array:Array = offestInput.getValue();
+			var array:Array = offsetInput.getValue();
 			var x:Number = array[0]?localVars[array[0]]:0;
 			var y:Number = array[1]?localVars[array[1]]:0;
 			var z:Number = array[2]?localVars[array[2]]:0;
@@ -61,7 +61,7 @@ class DriftParamS extends EditorWithPropertyBaseS
 	override public function importCode(xml:XML):void
 	{
 		super.importCode(xml);
-		offestInput.deserialize(xml.@offest);
+		offsetInput.deserialize(xml.@offset);
 		cycleComboBox.deserialize(xml.@cycle);
 	}
 }

@@ -40,23 +40,23 @@ import particleEditor.inputer.VectorComboBox;
 
 class DriftParam extends EditorWithPropertyBase
 {
-	private var offestInput:VectorComboBox;
+	private var offsetInput:VectorComboBox;
 	private var cycleComboBox:ComboBoxInput;
 	public function DriftParam(varListModel:VectorListModel)
 	{
 		super();
-		offestInput = new VectorComboBox("offest:", varListModel, "x:", "y:", "z:");
+		offsetInput = new VectorComboBox("offset:", varListModel, "x:", "y:", "z:");
 		
 		cycleComboBox = new ComboBoxInput("cycle:", varListModel);
 		
-		contentPane.appendAll(offestInput,cycleComboBox);
+		contentPane.appendAll(offsetInput,cycleComboBox);
 	}
 	
 	override public function createNeedStuff():*
 	{
 		return function(param:ParticleParam, localVars:Dictionary):void
 		{
-			var array:Array = offestInput.getValue();
+			var array:Array = offsetInput.getValue();
 			var x:Number = array[0]?localVars[array[0]]:0;
 			var y:Number = array[1]?localVars[array[1]]:0;
 			var z:Number = array[2]?localVars[array[2]]:0;
@@ -68,7 +68,7 @@ class DriftParam extends EditorWithPropertyBase
 	override public function getExportCode():XML
 	{
 		var xml:XML = super.getExportCode();
-		xml.@offest = offestInput.serialize();
+		xml.@offset = offsetInput.serialize();
 		xml.@cycle = cycleComboBox.serialize();
 		return xml;
 	}
@@ -76,7 +76,7 @@ class DriftParam extends EditorWithPropertyBase
 	override public function importCode(xml:XML):void
 	{
 		super.importCode(xml);
-		offestInput.deserialize(xml.@offest);
+		offsetInput.deserialize(xml.@offset);
 		cycleComboBox.deserialize(xml.@cycle);
 	}
 }

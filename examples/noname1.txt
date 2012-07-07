@@ -28,9 +28,9 @@ hrXMGz6+DWMCzvcun/nzE2g1/X67zWAmAAAAAElFTkSuQmCC</bitmap>
     <vars>
       <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="start time" start="0" end="10" ease="0"/>
       <editor clazz="particleEditor.effect.param.vars::ConstNumberVarEditor" varName="during time" number="3"/>
-      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offestX" start="-300" end="300" ease="15"/>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offsetX" start="-300" end="300" ease="15"/>
       <editor clazz="particleEditor.effect.param.vars::RandomGlobeVarEditor" varName="" innerRadius="10" outerRadius="20" center="0,0,0"/>
-      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offestY" start="-50" end="50" ease="11"/>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offsetY" start="-50" end="50" ease="11"/>
       <exception comment="this if for time action">
         <editor clazz="particleEditor.effect.param::TimeSelection" startTime="0" duringTime="1"/>
       </exception>
@@ -41,8 +41,8 @@ hrXMGz6+DWMCzvcun/nzE2g1/X67zWAmAAAAAElFTkSuQmCC</bitmap>
         <editor clazz="particleEditor.effect.action.global::ChangeColorByLifeGlobalEditor" varName="ChangeColorByLifeGlobal" start="0.8,0.8,0.2,0.4,0,0,0,0" end="0.2,0.8,0.8,0.1,0,0,0,0"/>
       </global>
       <local>
-        <editor clazz="particleEditor.effect.action.local::OffestActionEditor" varName="OffestPositionLocal">
-          <editor clazz="OffestActionEditor.as$53::OffestParam" offest="2,6,-1"/>
+        <editor clazz="particleEditor.effect.action.local::OffsetActionEditor" varName="OffsetPositionLocal">
+          <editor clazz="OffsetActionEditor.as$53::OffsetParam" offset="2,6,-1"/>
         </editor>
         <editor clazz="particleEditor.effect.action.local::VelocityLocalEditor" varName="VelocityLocal">
           <editor clazz="VelocityLocalEditor.as$46::VelocityParam" velocity="3,4,5"/>
@@ -79,9 +79,9 @@ hrXMGz6+DWMCzvcun/nzE2g1/X67zWAmAAAAAElFTkSuQmCC</bitmap>
     <vars>
       <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="start time" start="0" end="10" ease="0"/>
       <editor clazz="particleEditor.effect.param.vars::ConstNumberVarEditor" varName="during time" number="3"/>
-      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offestX" start="300" end="-300" ease="15"/>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offsetX" start="300" end="-300" ease="15"/>
       <editor clazz="particleEditor.effect.param.vars::RandomGlobeVarEditor" varName="" innerRadius="10" outerRadius="20" center="0,0,0"/>
-      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offestY" start="50" end="-50" ease="11"/>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offsetY" start="50" end="-50" ease="11"/>
       <exception comment="this if for time action">
         <editor clazz="particleEditor.effect.param::TimeSelection" startTime="0" duringTime="1"/>
       </exception>
@@ -92,8 +92,8 @@ hrXMGz6+DWMCzvcun/nzE2g1/X67zWAmAAAAAElFTkSuQmCC</bitmap>
         <editor clazz="particleEditor.effect.action.global::ChangeColorByLifeGlobalEditor" varName="ChangeColorByLifeGlobal" start="0.8,0.2,0.8,0.4,0,0,0,0" end="0.8,0.2,0.2,0.1,0,0,0,0"/>
       </global>
       <local>
-        <editor clazz="particleEditor.effect.action.local::OffestActionEditor" varName="OffestPositionLocal">
-          <editor clazz="OffestActionEditor.as$53::OffestParam" offest="2,6,-1"/>
+        <editor clazz="particleEditor.effect.action.local::OffsetActionEditor" varName="OffsetPositionLocal">
+          <editor clazz="OffsetActionEditor.as$53::OffsetParam" offset="2,6,-1"/>
         </editor>
         <editor clazz="particleEditor.effect.action.local::VelocityLocalEditor" varName="VelocityLocal">
           <editor clazz="VelocityLocalEditor.as$46::VelocityParam" velocity="3,4,5"/>
@@ -130,9 +130,9 @@ hrXMGz6+DWMCzvcun/nzE2g1/X67zWAmAAAAAElFTkSuQmCC</bitmap>
     <vars>
       <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="start time" start="0" end="10" ease="0"/>
       <editor clazz="particleEditor.effect.param.vars::ConstNumberVarEditor" varName="during time" number="3"/>
-      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offestY" start="-300" end="300" ease="15"/>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offsetY" start="-300" end="300" ease="15"/>
       <editor clazz="particleEditor.effect.param.vars::RandomGlobeVarEditor" varName="" innerRadius="10" outerRadius="20" center="0,0,0"/>
-      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offestX" start="-50" end="50" ease="11"/>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offsetX" start="-50" end="50" ease="11"/>
       <exception comment="this if for time action">
         <editor clazz="particleEditor.effect.param::TimeSelection" startTime="0" duringTime="1"/>
       </exception>
@@ -143,8 +143,8 @@ hrXMGz6+DWMCzvcun/nzE2g1/X67zWAmAAAAAElFTkSuQmCC</bitmap>
         <editor clazz="particleEditor.effect.action.global::ChangeColorByLifeGlobalEditor" varName="ChangeColorByLifeGlobal" start="0.2,0.2,0.8,0.4,0,0,0,0" end="0.8,0.2,0.2,0.1,0,0,0,0"/>
       </global>
       <local>
-        <editor clazz="particleEditor.effect.action.local::OffestActionEditor" varName="OffestPositionLocal">
-          <editor clazz="OffestActionEditor.as$53::OffestParam" offest="6,2,-1"/>
+        <editor clazz="particleEditor.effect.action.local::OffsetActionEditor" varName="OffsetPositionLocal">
+          <editor clazz="OffsetActionEditor.as$53::OffsetParam" offset="6,2,-1"/>
         </editor>
         <editor clazz="particleEditor.effect.action.local::VelocityLocalEditor" varName="VelocityLocal">
           <editor clazz="VelocityLocalEditor.as$46::VelocityParam" velocity="3,4,5"/>
@@ -181,9 +181,9 @@ hrXMGz6+DWMCzvcun/nzE2g1/X67zWAmAAAAAElFTkSuQmCC</bitmap>
     <vars>
       <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="start time" start="0" end="10" ease="0"/>
       <editor clazz="particleEditor.effect.param.vars::ConstNumberVarEditor" varName="during time" number="3"/>
-      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offestY" start="300" end="-300" ease="15"/>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offsetY" start="300" end="-300" ease="15"/>
       <editor clazz="particleEditor.effect.param.vars::RandomGlobeVarEditor" varName="" innerRadius="10" outerRadius="20" center="0,0,0"/>
-      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offestX" start="50" end="-50" ease="11"/>
+      <editor clazz="particleEditor.effect.param.vars::EaseNumberEditor" varName="offsetX" start="50" end="-50" ease="11"/>
       <exception comment="this if for time action">
         <editor clazz="particleEditor.effect.param::TimeSelection" startTime="0" duringTime="1"/>
       </exception>
@@ -194,8 +194,8 @@ hrXMGz6+DWMCzvcun/nzE2g1/X67zWAmAAAAAElFTkSuQmCC</bitmap>
         <editor clazz="particleEditor.effect.action.global::ChangeColorByLifeGlobalEditor" varName="ChangeColorByLifeGlobal" start="0.8,0,0.2,0.4,0,0,0,0" end="0.8,0.2,0.1,0.1,0,0,0,0"/>
       </global>
       <local>
-        <editor clazz="particleEditor.effect.action.local::OffestActionEditor" varName="OffestPositionLocal">
-          <editor clazz="OffestActionEditor.as$53::OffestParam" offest="6,2,-1"/>
+        <editor clazz="particleEditor.effect.action.local::OffsetActionEditor" varName="OffsetPositionLocal">
+          <editor clazz="OffsetActionEditor.as$53::OffsetParam" offset="6,2,-1"/>
         </editor>
         <editor clazz="particleEditor.effect.action.local::VelocityLocalEditor" varName="VelocityLocal">
           <editor clazz="VelocityLocalEditor.as$46::VelocityParam" velocity="3,4,5"/>

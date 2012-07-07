@@ -1049,11 +1049,11 @@ gg==</bitmap>
         <editor clazz="particleEditor.effect.action.global::BillboardEditor" varName="BillboardGlobal"/>
       </global>
       <local>
-        <editor clazz="particleEditor.effect.action.local::OffestActionEditor" varName="OffestPositionLocal">
-          <editor clazz="particleEditor.effect.OffestActionEditor.as$615::OffestParam" offest="2,4,3"/>
+        <editor clazz="particleEditor.effect.action.local::OffsetActionEditor" varName="OffsetPositionLocal">
+          <editor clazz="particleEditor.effect.OffsetActionEditor.as$615::OffsetParam" offset="2,4,3"/>
         </editor>
         <editor clazz="particleEditor.effect.action.local::DriftLocalEditor" varName="DriftLocal">
-          <editor clazz="particleEditor.effect.DriftLocalEditor.as$618::DriftParam" offest="5,-1,6" cycle="7"/>
+          <editor clazz="particleEditor.effect.DriftLocalEditor.as$618::DriftParam" offset="5,-1,6" cycle="7"/>
         </editor>
       </local>
     </action>

@@ -1,27 +1,27 @@
 package particleEditor.effect.action.local
 {
-	import a3dparticle.animators.actions.position.OffestPositionLocal;
+	import a3dparticle.animators.actions.position.OffsetPositionLocal;
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
-	public class OffestActionEditorS extends LocalActionBaseS
+	public class OffsetActionEditorS extends LocalActionBaseS
 	{
 		
-		public function OffestActionEditorS(_varListModel:Array) 
+		public function OffsetActionEditorS(_varListModel:Array) 
 		{
 			super(_varListModel);
 		}
 		
 		override public function createNeedStuff():*
 		{
-			return new OffestPositionLocal();
+			return new OffsetPositionLocal();
 		}
 		
 		override protected function createParamPane():EditorWithPropertyBaseS
 		{
-			return new OffestParamS(varListModel);
+			return new OffsetParamS(varListModel);
 		}
 		
 	}
@@ -34,11 +34,11 @@ import flash.utils.Dictionary;
 import particleEditor.edit.EditorWithPropertyBaseS;
 import particleEditor.inputer.VectorComboBoxS;
 
-class OffestParamS extends EditorWithPropertyBaseS
+class OffsetParamS extends EditorWithPropertyBaseS
 {
 	private var valueInput:VectorComboBoxS;
 	
-	public function OffestParamS(varListModel:Array)
+	public function OffsetParamS(varListModel:Array)
 	{
 		super();
 		valueInput = new VectorComboBoxS(varListModel);
@@ -52,13 +52,13 @@ class OffestParamS extends EditorWithPropertyBaseS
 			var x:Number = array[0]?localVars[array[0]]:0;
 			var y:Number = array[1]?localVars[array[1]]:0;
 			var z:Number = array[2]?localVars[array[2]]:0;
-			param["OffestPositionLocal"] = new Vector3D(x, y, z);
+			param["OffsetPositionLocal"] = new Vector3D(x, y, z);
 		}
 	}
 	
 	override public function importCode(xml:XML):void
 	{
 		super.importCode(xml);
-		valueInput.deserialize(xml.@offest);
+		valueInput.deserialize(xml.@offset);
 	}
 }
