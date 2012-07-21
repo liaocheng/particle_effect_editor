@@ -1,8 +1,8 @@
-package  
+package
 {
 	import away3d.containers.View3D;
 	import away3d.debug.AwayStats;
-	import away3d.primitives.WireframeAxesGrid;
+	import away3d.debug.WireframeAxesGrid;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import org.aswing.ASColor;
@@ -26,7 +26,7 @@ package
 		
 		private var _effect:EffectGroup;
 		
-		public function PreviewPane() 
+		public function PreviewPane()
 		{
 			_view = new View3D();
 			_view.width = 256;
@@ -89,6 +89,11 @@ package
 		private function onShowGrid(e:Event):void
 		{
 			_axesGrid.visible = _showGrid.isSelected();
+		}
+		
+		public function dispose():void
+		{
+			_view.dispose();
 		}
 	}
 

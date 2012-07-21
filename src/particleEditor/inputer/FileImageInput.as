@@ -1,19 +1,19 @@
 package particleEditor.inputer
 {
-	import away3d.loaders.parsers.data.DefaultBitmapData;
+	import away3d.materials.utils.DefaultMaterialManager;
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	import flash.display.Loader;
 	import flash.events.Event;
 	import flash.net.FileFilter;
 	import flash.utils.ByteArray;
+	import mx.utils.Base64Decoder;
+	import mx.utils.Base64Encoder;
 	import org.aswing.AssetPane;
 	import org.aswing.geom.IntDimension;
 	import org.aswing.JButton;
 	import org.aswing.JLabel;
 	import org.aswing.JPanel;
-	import mx.utils.Base64Decoder;
-	import mx.utils.Base64Encoder;
 	import particleEditor.utils.FileOperater;
 	/**
 	 * ...
@@ -25,7 +25,7 @@ package particleEditor.inputer
 		protected var assetPane:AssetPane;
 		protected var bitmapData:BitmapData;
 		
-		public function FileImageInput(title:String) 
+		public function FileImageInput(title:String)
 		{
 			super();
 			var label:JLabel = new JLabel(title);
@@ -45,7 +45,7 @@ package particleEditor.inputer
 			}
 			else
 			{
-				return DefaultBitmapData.bitmapData;
+				return DefaultMaterialManager.getDefaultTexture().bitmapData;
 			}
 		}
 		
