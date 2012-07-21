@@ -1,6 +1,6 @@
 package particleEditor.inputer
 {
-	import away3d.loaders.parsers.data.DefaultBitmapData;
+	import away3d.materials.utils.DefaultMaterialManager;
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	import flash.display.Loader;
@@ -17,7 +17,7 @@ package particleEditor.inputer
 		protected var _byte:ByteArray;
 		protected var bitmapData:BitmapData;
 		
-		public function FileImageInputS() 
+		public function FileImageInputS()
 		{
 		}
 		
@@ -29,7 +29,7 @@ package particleEditor.inputer
 			}
 			else
 			{
-				return DefaultBitmapData.bitmapData;
+				return DefaultMaterialManager.getDefaultTexture().bitmapData;
 			}
 		}
 		
