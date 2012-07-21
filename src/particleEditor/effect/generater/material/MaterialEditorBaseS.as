@@ -14,8 +14,12 @@ package particleEditor.effect.generater.material
 		protected var bothSidesCheck:Boolean;
 		protected var requiresBlendingCheck:Boolean;
 		protected var blendModeCombo:ComboBoxInputS;
+		protected var multipleRendering:Boolean;
+		protected var renderTimes:int;
+		protected var timeInterval:Number;
+		protected var fadeFactor:Number;
 		
-		public function MaterialEditorBaseS() 
+		public function MaterialEditorBaseS()
 		{
 			super();
 			bothSidesCheck = false;
@@ -41,6 +45,12 @@ package particleEditor.effect.generater.material
 			material.bothSides = bothSidesCheck;
 			material.requiresBlending = requiresBlendingCheck;
 			if (material.requiresBlending) material.blendMode = blendModeCombo.getValue();
+			if (multipleRendering)
+			{
+				material.renderTimes = renderTimes;
+				material.timeInterval = timeInterval;
+				material.alphaFade = fadeFactor;
+			}
 		}
 		
 		override public function importCode(xml:XML):void
@@ -49,6 +59,13 @@ package particleEditor.effect.generater.material
 			bothSidesCheck = Boolean(int(xml.@bothSides));
 			requiresBlendingCheck = Boolean(int(xml.@requiresBlending));
 			blendModeCombo.deserialize(xml.@blendMode);
+			multipleRendering = Boolean(int(xml.@multipleRendering));
+			if (multipleRendering)
+			{
+				renderTimes=int(xml.@renderTimes);
+				timeInterval = Number(xml.@timeInterval);
+				fadeFactor = Number(xml.@fadeFactor);
+			}
 		}
 		
 	}

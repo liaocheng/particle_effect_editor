@@ -2,11 +2,16 @@ package particleEditor.effect.generater.material
 {
 	import a3dparticle.particle.ParticleMaterialBase;
 	import flash.display.BlendMode;
+	import org.aswing.AsWingConstants;
+	import org.aswing.FlowLayout;
+	import org.aswing.SoftBoxLayout;
 	import particleEditor.inputer.BooleanInput;
 	import particleEditor.inputer.ComboBoxInput;
 	import org.aswing.event.AWEvent;
 	import org.aswing.JPanel;
 	import particleEditor.edit.VarNameEditorBase;
+	import particleEditor.inputer.IntInput;
+	import particleEditor.inputer.NumberInput;
 	/**
 	 * ...
 	 * @author liaocheng
@@ -17,8 +22,14 @@ package particleEditor.effect.generater.material
 		protected var bothSidesCheck:BooleanInput;
 		protected var requiresBlendingCheck:BooleanInput;
 		protected var blendModeCombo:ComboBoxInput;
+		protected var multipleRendering:BooleanInput;
+		protected var multiplePane:JPanel;
+		protected var renderTimes:IntInput;
+		protected var timeInterval:NumberInput;
+		protected var fadeFactor:NumberInput;
 		
-		public function MaterialEditorBase() 
+		
+		public function MaterialEditorBase()
 		{
 			super();
 			bothSidesCheck = new BooleanInput("bothSides");
@@ -30,7 +41,25 @@ package particleEditor.effect.generater.material
 			blendModeCombo.getComboBox().setSelectedIndex(0);
 			var pane:JPanel = new JPanel();
 			pane.appendAll(requiresBlendingCheck, blendModeCombo);
-			contentPane.appendAll(bothSidesCheck, pane);
+			multipleRendering = new BooleanInput("multipleRendering");
+			multiplePane = new JPanel(new SoftBoxLayout(SoftBoxLayout.Y_AXIS, 1));
+			renderTimes = new IntInput("render times:", "1", 2, 4);
+			timeInterval = new NumberInput(" time interval:", "0.1", 2, 4);
+			fadeFactor = new NumberInput("  fade   factor:", "0.5", 2, 4);
+			contentPane.appendAll(bothSidesCheck, pane, multipleRendering, multiplePane);
+			multipleRendering.addActionListener(onMultipleChange);
+		}
+		
+		private function onMultipleChange(e:AWEvent):void
+		{
+			if (multipleRendering.getValue())
+			{
+				multiplePane.appendAll(renderTimes, timeInterval, fadeFactor);
+			}
+			else
+			{
+				multiplePane.removeAll();
+			}
 		}
 		
 		private function onChange(e:AWEvent):void
@@ -56,6 +85,12 @@ package particleEditor.effect.generater.material
 			material.bothSides = bothSidesCheck.getValue();
 			material.requiresBlending = requiresBlendingCheck.getValue();
 			if (material.requiresBlending) material.blendMode = blendModeCombo.getValue();
+			if (multipleRendering.getValue())
+			{
+				material.renderTimes = renderTimes.getInputInt();
+				material.timeInterval = timeInterval.getInputNumber();
+				material.alphaFade = fadeFactor.getInputNumber();
+			}
 		}
 		
 		override public function getExportCode():XML
@@ -64,6 +99,10 @@ package particleEditor.effect.generater.material
 			xml.@bothSides = bothSidesCheck.serialize();
 			xml.@requiresBlending = requiresBlendingCheck.serialize();
 			xml.@blendMode = blendModeCombo.serialize();
+			xml.@multipleRendering = multipleRendering.serialize();
+			xml.@renderTimes = renderTimes.serialize();
+			xml.@timeInterval = timeInterval.serialize();
+			xml.@fadeFactor = fadeFactor.serialize();
 			return xml;
 		}
 		
@@ -73,6 +112,12 @@ package particleEditor.effect.generater.material
 			bothSidesCheck.deserialize(xml.@bothSides);
 			requiresBlendingCheck.deserialize(xml.@requiresBlending);
 			blendModeCombo.deserialize(xml.@blendMode);
+			multipleRendering.deserialize(xml.@multipleRendering);
+			renderTimes.deserialize(xml.@renderTimes);
+			timeInterval.deserialize(xml.@timeInterval);
+			fadeFactor.deserialize(xml.@fadeFactor);
+			onMultipleChange(null);
+			onChange(null);
 		}
 		
 	}
