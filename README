@@ -8,9 +8,7 @@ step 4: change any propertys of the example and then preview again.
 how to use the exported code in your project:
 first ,load the exported file, convert it to XML type.
 then code as :
-	var factory:EffectGroupFactoryS = new EffectGroupFactoryS();
-	factory.importCode(xml);
-	var effect:EffectGroup = factory.createNeedStuff() as EffectGroup;
+	var effect:EffectGroup = EffectGroupFactoryS.createEffectGroup(xml);
 	_view.scene.addChild(effect);
 	effect.start();
 very simple!
