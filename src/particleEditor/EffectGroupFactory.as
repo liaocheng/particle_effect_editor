@@ -32,7 +32,7 @@ package particleEditor
 		private var _deleteButton:JButton;
 		
 		
-		public function EffectGroupFactory() 
+		public function EffectGroupFactory()
 		{
 			super(new SoftBoxLayout(SoftBoxLayout.Y_AXIS, 10));
 			
@@ -69,6 +69,8 @@ package particleEditor
 		public function getExportCode():XML
 		{
 			var xml:XML = new XML("<" + tagName + "/>");
+			xml.@main = EffectFormat.MAIN;
+			xml.@minor = EffectFormat.MINOR;
 			for each(var effect:EffectFactory in _particleGeneraters.toArray())
 			{
 				xml.appendChild(effect.getExportCode());
@@ -78,6 +80,7 @@ package particleEditor
 		
 		public function importCode(code:XML):void
 		{
+			EffectFormat.verifyFormat(code);
 			_particleGeneraters.removeRange(0, _particleGeneraters.getSize() - 1);
 			for each(var effect:XML in code.effect)
 			{
@@ -89,17 +92,17 @@ package particleEditor
 		
 		public function createNeedStuff():*
 		{
-			var effectGroup:EffectGroup = new EffectGroup();
 			var effects:Array = _particleGeneraters.toArray();
+			var _particleContainers:Vector.<ParticlesContainer> = new Vector.<ParticlesContainer>;
 			for each(var i:EffectFactory in effects)
 			{
 				if (i.enable)
 				{
-					effectGroup.addParticleContainer(i.createNeedStuff() as ParticlesContainer);
+					_particleContainers.push(i.createNeedStuff() as ParticlesContainer);
 				}
 			}
-			return effectGroup;
-		}		
+			return new EffectGroup(getExportCode().toString(), _particleContainers);
+		}
 		
 		private function addNewContainer(e:AWEvent):void
 		{

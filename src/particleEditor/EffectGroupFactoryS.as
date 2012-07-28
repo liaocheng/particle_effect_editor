@@ -1,4 +1,4 @@
-package particleEditor 
+package particleEditor
 {
 	import a3dparticle.ParticlesContainer;
 	import particleEditor.edit.IImportable;
@@ -10,8 +10,9 @@ package particleEditor
 	public class EffectGroupFactoryS implements IImportable
 	{
 		private var _particleGeneraters:Vector.<EffectFactoryS>;
+		private var _rawData:*;
 		
-		public function EffectGroupFactoryS() 
+		public function EffectGroupFactoryS()
 		{
 			_particleGeneraters = new Vector.<EffectFactoryS>;
 		}
@@ -23,6 +24,7 @@ package particleEditor
 		
 		public function importCode(code:XML):void
 		{
+			EffectFormat.verifyFormat(code);
 			_particleGeneraters = new Vector.<EffectFactoryS>;
 			for each(var effect:XML in code.effect)
 			{
@@ -30,16 +32,27 @@ package particleEditor
 				system.importCode(effect);
 				_particleGeneraters.push(system);
 			}
+			_rawData = code.toString();
 		}
 		
 		public function createNeedStuff():*
 		{
-			var effectGroup:EffectGroup = new EffectGroup();
+			if (!_rawData)
+				throw(new Error("please import a valid data first"));
+			
+			var _particleContainers:Vector.<ParticlesContainer> = new Vector.<ParticlesContainer>;
 			for each(var i:EffectFactoryS in _particleGeneraters)
 			{
-				effectGroup.addParticleContainer(i.createNeedStuff() as ParticlesContainer);
+				_particleContainers.push(i.createNeedStuff() as ParticlesContainer);
 			}
-			return effectGroup;
+			return new EffectGroup(_rawData, _particleContainers);
+		}
+		
+		public static function createEffectGroup(_rawData:*):EffectGroup
+		{
+			var effectGroupFactory:EffectGroupFactoryS = new EffectGroupFactoryS();
+			effectGroupFactory.importCode(XML(_rawData));
+			return effectGroupFactory.createNeedStuff() as EffectGroup;
 		}
 		
 	}

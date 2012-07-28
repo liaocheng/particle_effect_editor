@@ -1,4 +1,4 @@
-package  
+package
 {
 	import flash.display.DisplayObject;
 	import flash.events.Event;
@@ -40,7 +40,7 @@ package
 		//set particleContainer's property
 		private var _systemContainer:JPanel;
 		
-		public function MainWindow(parent:DisplayObject) 
+		public function MainWindow(parent:DisplayObject)
 		{
 			super(parent);
 			addEventListener(Event.ENTER_FRAME, onRender);
@@ -128,7 +128,7 @@ package
 		}
 		
 		private function openFile(e:Event):void
-		{ 
+		{
 			FileOperater.readFile(new FileFilter("open a valid xml file", "*.*"), onReadFile);
 		}
 		
@@ -141,7 +141,7 @@ package
 		}
 		
 		private function saveFile(e:Event):void
-		{ 
+		{
 			FileOperater.writeFile(_effectGroupFactory.getExportCode());
 		}
 		
@@ -158,9 +158,8 @@ package
 			catch (e:Error)
 			{
 				JOptionPane.showMessageDialog("error", e.message + "\n" + e.getStackTrace());
-				var effectGroup:EffectGroup = new EffectGroup(); 
-				_playPane.setEffect(effectGroup);
-				_previewPane.previewEffect(effectGroup);
+				//_playPane.setEffect(null);
+				//_previewPane.previewEffect(null);
 			}
 		}
 		
@@ -173,9 +172,8 @@ package
 			catch (e:Error)
 			{
 				JOptionPane.showMessageDialog("error", e.message + "\n" + e.getStackTrace());
-				var effectGroup:EffectGroup = new EffectGroup(); 
-				_playPane.setEffect(effectGroup);
-				_previewPane.previewEffect(effectGroup);
+				_playPane.setEffect(null);
+				_previewPane.previewEffect(null);
 			}
 		}
 		

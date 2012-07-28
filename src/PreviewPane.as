@@ -61,7 +61,7 @@ package
 		{
 			if (_effect)_view.scene.removeChild(_effect);
 			_effect = effect;
-			_view.scene.addChild(_effect);
+			if (_effect)_view.scene.addChild(_effect);
 		}
 		
 		public function setSize(w:int,h:int):void
