@@ -10,9 +10,10 @@ package particleEditor.effect.action
 	public class LocalFactoryS implements IImportable
 	{
 		
-		private static const localAction:Array = [ new EditorDefinition("velocity",VelocityLocalEditorS) , new EditorDefinition("offset", OffsetActionEditorS), new EditorDefinition("accelerate",AccelerateLocalEditorS) , 
+		private static const localAction:Array = [ new EditorDefinition("velocity",VelocityLocalEditorS) , new EditorDefinition("offset", OffsetActionEditorS), new EditorDefinition("accelerate",AccelerateLocalEditorS) ,
 													new EditorDefinition("circle",CircleLocalEditorS) , new EditorDefinition("drift",DriftLocalEditorS), new EditorDefinition("scale",RandomScaleLocalEditorS) ,
-													new EditorDefinition("bezier",BezierLocalEditorS), new EditorDefinition("rotation",RotateLocalEditorS),new EditorDefinition("UV seq pic by time",UVSeqPicByTimeLocalEditorS)];
+													new EditorDefinition("bezier", BezierLocalEditorS), new EditorDefinition("rotation", RotateLocalEditorS), new EditorDefinition("UV seq pic by time", UVSeqPicByTimeLocalEditorS),
+													new EditorDefinition("color", ColorTransformEditorS)];
 		
 		
 		private var _actionsModel:Array = new Array();
@@ -20,7 +21,7 @@ package particleEditor.effect.action
 		private var _varListModel:Array;
 		
 		
-		public function LocalFactoryS(varListModel:Array) 
+		public function LocalFactoryS(varListModel:Array)
 		{
 			_varListModel = varListModel;
 		}

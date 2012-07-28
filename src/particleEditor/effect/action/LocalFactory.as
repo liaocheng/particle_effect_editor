@@ -22,9 +22,10 @@ package particleEditor.effect.action
 	public class LocalFactory extends JPanel implements IExportable
 	{
 		
-		private static const localAction:Array = [ new EditorDefinition("velocity",VelocityLocalEditor) , new EditorDefinition("offset", OffsetActionEditor), new EditorDefinition("accelerate",AccelerateLocalEditor) , 
+		private static const localAction:Array = [ new EditorDefinition("velocity",VelocityLocalEditor) , new EditorDefinition("offset", OffsetActionEditor), new EditorDefinition("accelerate",AccelerateLocalEditor) ,
 													new EditorDefinition("circle",CircleLocalEditor) , new EditorDefinition("drift",DriftLocalEditor), new EditorDefinition("scale",RandomScaleLocalEditor) ,
-													new EditorDefinition("bezier", BezierLocalEditor), new EditorDefinition("rotation", RotateLocalEditor),new EditorDefinition("UV seq pic by time",UVSeqPicByTimeLocalEditor)];
+													new EditorDefinition("bezier", BezierLocalEditor), new EditorDefinition("rotation", RotateLocalEditor), new EditorDefinition("UV seq pic by time", UVSeqPicByTimeLocalEditor),
+													new EditorDefinition("color", ColorTransformEditor)];
 		private var comboBox:JComboBox;
 		
 		private var content:JPanel;
@@ -38,7 +39,7 @@ package particleEditor.effect.action
 		
 		private var _titleHandler:Function;
 		
-		public function LocalFactory(titleHandler:Function,actionParamPane:Container,varListModel:VectorListModel) 
+		public function LocalFactory(titleHandler:Function,actionParamPane:Container,varListModel:VectorListModel)
 		{
 			super(new SoftBoxLayout(SoftBoxLayout.Y_AXIS, 5));
 			_titleHandler = titleHandler;
